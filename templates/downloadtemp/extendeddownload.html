@@ -1,0 +1,156 @@
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Check Your Results</title>
+    <script type="text/javascript">
+    function printpage() {
+        //Get the print button and put it into a variable
+        var printButton = document.getElementById("printpagebutton");
+        var backButton = document.getElementById("hidebackbutton");
+        //Set the print button visibility to 'hidden'
+        printButton.style.visibility = 'hidden';
+        backButton.style.visibility = 'hidden';
+        //Print the page content
+        window.print()
+        printButton.style.visibility = 'visible';
+        backButton.style.visibility = 'visible';
+    }
+</script>
+<!--    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
+<!--    <script>-->
+<!--    $(document).ready(function () {-->
+<!--&lt;!&ndash;        if ($("#hidebackbutton").val()) //if input has value&ndash;&gt;-->
+<!--            $("#hidebackbutton").show(); //hide button-->
+<!--    })-->
+<!--    </script>-->
+</head>
+<body>
+ <div id="content" class="container text-center my-auto">
+     <div class="card border-primary mb-3" style="max-width: 50rem;">
+  <div class="card-header">Patient Report</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Patient Details</h5>
+     <table  class="table table-bordered" border="1" cellpadding="15px" cellspacing="13px" bgcolor="seagreen">
+         <div class="row" style="margin-left:3%">
+         <label>Patient_Name</label>
+                                {% for pi in pid %}
+                                <input type="hidden" name="pid" value="{{pi.id}}">
+								<input type="text" name="pname" value="{{pi.Patient_Name}}"required>&nbsp;
+                                <label>Gender</label>
+                                <input type="text" name="pgen"  value="{{pi.Gender}}" required>
+                                <label>D.O.B</label>
+                                    <input type="text" name="pdat"  value="{{pi.DateofBirth}}" required>
+         </div>
+
+<!--                                <label>D.O.B</label>-->
+<!--                                <input type="text" name="pdat"  value="{{pi.DateofBirth}}" required>&nbsp;-->
+                     <br><br>
+         <div class="row" style="margin-left:3%">
+         <label>Age</label>
+                                <input type="text" name="pag" value="{{pi.Age}}" required>&nbsp;
+                                <label>BloodGroup</label>
+                                <input type="text" name="pbg"  value="{{pi.BloodGroup}}" required>&nbsp;
+                                <label>Email</label>
+                                <input type="text" name="pmail" value="{{pi.Email}}" required><br><br>
+         </div><br><br>
+         <div class="row" style="margin-left:1%">
+             <label>Mobile</label>
+                                <input type="text" name="pmob" value="{{pi.Mobile}}" required>&nbsp;
+                                <label>MedicalHistory</label>
+                                <input type="text" name="pmed" value="{{pi.MedicalHistory}}" required>&nbsp;
+                                <label>Address</label>
+                                <input type="text" name="paddr" value="{{pi.ResidencyAddress}}"required><br><br>
+             {% endfor %}&nbsp;</div><br><br>
+
+                                <label>TestReport:</label>
+<!--							<button name="submit" value="check">Search</button>-->
+
+     							 <tr>
+									 <td>Patient_ID</td>
+        							<td>Test</td>
+        							<td>Result</td>
+        							<td>Units</td>
+		 							<td>Reference_range</td>
+
+								 </tr>
+
+									{% for can in blood %}
+							    		<tr>
+											<td>{{request.session.email}}</td>
+        									<td>{{can.Test}}</td>
+        									<td>{{can.Result}}</td>
+        									<td>{{can.Units}}</td>
+											<td>{{can.Reference_range}}</td>
+										</tr>
+
+    								{% endfor %}
+
+
+     </table><br><br>
+ </div>
+
+<!-- <form>-->
+<!--     <input type=button value="Print Report!!!" onClick="javascript:window.print()">-->
+<!-- </form>-->
+
+<!--<div id="content">-->
+<!--     <h3>Hello, this is a H3 tag</h3>-->
+
+<!--    <p>a pararaph</p>-->
+<!--</div>-->
+<!--<div id="editor"></div>-->
+<!--<button id="cmd">generate PDF</button>-->
+
+
+<!--<div id="content">-->
+<!--     <h3>Hello, this is a H3 tag</h3>-->
+
+<!--    <p>a pararaph</p>-->
+<!--</div>-->
+<!--<div id="editor"></div>-->
+<!--<button id="cmd">generate PDF</button>-->
+
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+
+
+
+	 				<form>
+							<input type=button value="Print Report" id="printpagebutton" onClick="printpage()">
+                    </form>
+                             <form method="POST" action="do">{% csrf_token %}
+
+                                 <button class="btn btn--radius-2 btn--red" id="hidebackbutton"  type="submit">Back</button>
+                                  </form>
+</div>
+ </div>
+
+<!--	 					<form>-->
+<!--							<input type=button value="Print me!" onClick="javascript:window.print()">-->
+<!--						</form>-->
+
+
+
+
+<!--var doc = new jsPDF();-->
+<!--var specialElementHandlers = {-->
+<!--    '#editor': function (element, renderer) {-->
+<!--        return true;-->
+<!--    }-->
+<!--};-->
+
+<!--$('#cmd').click(function () {-->
+<!--    doc.fromHTML($('#content').html(), 15, 15, {-->
+<!--        'width': 170,-->
+<!--            'elementHandlers': specialElementHandlers-->
+<!--    });-->
+<!--    doc.save('sample-file.pdf');-->
+<!--});-->
+
+
+
+</body>
+</html>

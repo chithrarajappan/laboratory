@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+</head>
+<body>
+<div class="content_box">
+	<div class="left_bar">
+	    <ul class=" nav-tabs--vertical nav">
+<!--		<li class="nav-item">-->
+<!--			<a href="#lorem" class="nav-link active" data-toggle="tab" role="tab" aria-controls="lorem">Home</a>-->
+<!--		</li>-->
+<!--		<li class="nav-item">-->
+<!--			<a href="#ipsum" class="nav-link" data-toggle="tab" role="tab" aria-controls="ipsum">search</a>-->
+<!--		</li>-->
+<!--		<li class="nav-item">-->
+<!--			<a href="#dolor" class="nav-link " data-toggle="tab" role="tab" aria-controls="dolor">view</a>-->
+<!--		</li>-->
+<!--		<li class="nav-item">-->
+<!--			<a href="#sit-amet" class="nav-link" data-toggle="tab" role="tab" aria-controls="sit-amet">logout</a>-->
+<!--		</li>-->
+	</ul>
+	</div>
+    <div class="card text-white bg-info mb-3" style="max-width: 50rem;  height: 800px; margin-left:24% ">
+  <div class="card-header">Patient</div>
+  <div class="card-body">
+    <h5 class="card-title">Appointments</h5>
+    <p class="card-text">Details</p>
+
+    <div class="right_bar ">
+        	<div class="tab-content ">
+		<div class="tab-pane fade show active" id="lorem" role="tabpanel">
+<table  class="table table-bordered" border="1" cellpadding="15px" cellspacing="13px">
+      <tr>
+          <td>Name</td>
+        <td>Email</td>
+
+<!--        <td>Username</td>-->
+<!--        <td>Password</td>-->
+          <td>Subject</td>
+          <td>Message</td>
+<!--          <td>DateofBirth</td>-->
+<!--          <td>BloodGroup</td>-->
+<!--          <td>Mobile</td>-->
+<!--          <td>Email</td>-->
+<!--          <td>ResidencyAddress</td>-->
+<!--          <td>MedicalHistory</td>-->
+      </tr>
+     {% for pat in patient %}
+    <tr>
+        <td>{{pat.Name}}</td>
+        <td>{{pat.Email}}</td>
+<!--        <td>{{pat.Username}}</td>-->
+<!--        <td>{{pat.Password}}</td>-->
+        <td>{{pat.Subject}}</td>
+        <td>{{pat.Message}}</td>
+<!--        <td>{{pat.DateofBirth}}</td>-->
+<!--        <td>{{pat.BloodGroup}}</td>-->
+<!--        <td>{{pat.Mobile}}</td>-->
+<!--        <td>{{pat.Email}}</td>-->
+<!--        <td>{{pat.ResidencyAddress}}</td>-->
+<!--        <td>{{pat.MedicalHistory}}</td>-->
+
+
+
+
+        <!--<td><a href="update/{{can.login_id}}">Accept</a>
+             <a href="delete/{{can.login_id}}">Reject</a></td>-->
+
+
+
+    </tr>
+
+    {% endfor %}
+
+  </table>
+			</div>
+	</div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

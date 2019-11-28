@@ -1,0 +1,98 @@
+{% load static %}
+<html lang="en">
+<head>
+	<title>Labs - Design Studio</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Labs - Design Studio">
+	<meta name="keywords" content="lab, onepage, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="{% static 'techstatic/img/favicon.ico' %}" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'techstatic/css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'techstatic/css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'techstatic/css/flaticon.css' %}"/>
+	<link rel="stylesheet" href="{% static 'techstatic/css/magnific-popup.css' %}"/>
+	<link rel="stylesheet" href="{% static 'techstatic/css/owl.carousel.css' %}"/>
+	<link rel="stylesheet" href="{% static 'techstatic/css/style.css' %}"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader">
+			<img src="{% static 'techstatic/img/logo.png' %}" alt="">
+
+		</div>
+	</div>
+
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="logo">
+			<img src="{% static 'techstatic/img/logo.png' %}" alt=""><!-- Logo -->
+		</div>
+		<!-- Navigation -->
+		<div class="responsive"><i class="fa fa-bars"></i></div>
+		<nav>
+			<ul class="menu-list">
+				<li class="active"><a href="hom">Home</a></li>
+				<li><a href="pat">Patient</a></li>
+				<li><a href="test">AddTest</a></li>
+				<li><a href="report">Report</a></li>
+				<li><a href="lgout">Logout</a></li>
+
+			</ul>
+		</nav>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Intro Section -->
+	<div class="hero-section">
+		<div class="hero-content">
+			<div class="hero-center">
+				<img src="{% static 'techstatic/img/big-logo.png' %}" alt="">
+
+			</div>
+		</div>
+		<!-- slider -->
+		<div id="hero-slider" class="owl-carousel">
+			<div class="item  hero-item" data-bg="{% static 'techstatic/img/25.jpg' %}"></div>
+			<div class="item  hero-item" data-bg="{% static 'techstatic/img/22.jpeg' %}"></div>
+		</div>
+	</div>
+	<!-- Intro Section -->
+
+
+
+
+
+	<!-- Team Section end-->
+
+
+
+
+
+
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{% static 'techstatic/js/jquery-2.1.4.min.js' %}"></script>
+	<script src="{% static 'techstatic/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'techstatic/js/magnific-popup.min.js' %}"></script>
+	<script src="{% static 'techstatic/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'techstatic/js/circle-progress.min.js' %}"></script>
+	<script src="{% static 'techstatic/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<html>
+<head>
+
+
+    <title>Download Your Report</title>
+
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<!--<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">-->
+<!--  <div class="card-header">Header</div>-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">Primary card title</h5>-->
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--  </div>-->
+    <div class="container text-center my-auto">
+
+        <table  class="table table-bordered" border="1" cellpadding="15px" cellspacing="13px" bgcolor="seagreen">
+
+         <form method="post" action="dwn">{% csrf_token %}
+
+
+							{{ form }}
+								<label>Patient_Name</label>
+                                {% for pi in pid %}
+                                <input type="hidden" name="pid" value="{{pi.id}}">
+								<input type="text" name="pname" value="{{pi.Patient_Name}}"required>&nbsp;
+                                <label>Gender</label>
+                                <input type="text" name="pgen"  value="{{pi.Gender}}" required>
+
+                                <label>D.O.B</label>
+                                <input type="text" name="pdat"  value="{{pi.DateofBirth}}" required>&nbsp;
+                     <br><br>           <label>Age</label>
+                                <input type="text" name="pag" value="{{pi.Age}}" required>&nbsp;
+                            <label>BloodGroup</label>
+                            <input type="text" name="pbg"  value="{{pi.BloodGroup}}" required>&nbsp;
+                            <label>Email</label>
+                            <input type="text" name="pmail" value="{{pi.Email}}" required><br><br>
+                            <label>Mobile</label>
+                            <input type="text" name="pmob" value="{{pi.Mobile}}" required>&nbsp;
+                            <label>MedicalHistory</label>
+                            <input type="text" name="pmed" value="{{pi.MedicalHistory}}" required>&nbsp;
+                            <label>Address</label>
+                            <input type="text" name="paddr" value="{{pi.ResidencyAddress}}"required><br><br>
+
+                 {% endfor %}&nbsp;
+
+
+             <h2>Check Out Your Result In Just Few Minutes...</h2>
+<!--             <label>TestName:</label>-->
+<!--                                <select name="testcheck">-->
+<!--                                             <option>select</option>-->
+<!--                                             <option value="Cholesterol">Cholesterol</option>-->
+<!--                                             <option value="Diabetes">Diabetes</option>-->
+<!--                                             <option value="UricAcid">UricAcid</option>-->
+<!--                                             <option value="Hematology">Hematology</option>-->
+<!--                                        </select>-->
+<!--&lt;!&ndash;                                <input class="input&#45;&#45;style-5" type="hidden" name="hemato" readonly value="hematology">&ndash;&gt;-->
+
+<!--								<input class="btn btn-primary" type="submit" value="Search" />-->
+<!--         </form>-->
+<!--     </table>-->
+<!--    </div><br><br>-->
+<!--<h2>Check Out Your Result In Just Few Minutes...</h2>-->
+<!--<p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.</p>-->
+<!--<p>Resize the browser window to see the responsive effect.</p>-->
+<!--<p><strong>Note:</strong> Flexbox is not supported in Internet Explorer 10 and earlier versions.</p>-->
+
+<header>
+  <h2>LabReport</h2>
+</header>
+
+<section>
+  <nav>
+<!--    <ul>-->
+<!--      <li><a href="#">Hematology</a></li>-->
+<!--      <li><a href="#">Cholesterol</a></li>-->
+<!--      <li><a href="#">Diabetes</a></li>-->
+<!--       <li><a href="#">UricAcid</a></li>-->
+      <label>TestName:</label>
+                                <select name="testcheck">
+                                             <option>select</option>
+                                             <option value="Cholesterol">Cholesterol</option>
+                                             <option value="Diabetes">Diabetes</option>
+                                             <option value="UricAcid">UricAcid</option>
+                                             <option value="Hematology">Hematology</option>
+                                        </select>
+<!--                                <input class="input&#45;&#45;style-5" type="hidden" name="hemato" readonly value="hematology">-->
+
+								<input class="btn btn-primary" type="submit" value="Search" />
+<!--         -->
+
+
+  </nav>
+
+  <article>
+    <h1>Illume Labs And Diagnostic Center</h1>
+    <p>PO Box No.3567859</p>
+    <p>Gandhari Amman Kovil, Vrindavan Gardens, Trivandrum</p>
+      <p>Phone:555-555-55555</p>
+      <p>Fax:555-555-55555</p>
+  </article>
+</section>
+
+<footer>
+  <p>&#9400;1995–2019 Illume Labs And Diagnostic Center. All Rights Reserved.</p>
+</footer>
+             </form>
+
+     </table>
+            </div>
+    <br><br>
+
+
+</body>
+</html>

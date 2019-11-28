@@ -1,0 +1,117 @@
+<script type="text/javascript">
+function hematology()
+{
+document.getElementById('hemat').style.display='block';
+document.getElementById('diab').style.display='none';
+document.getElementById('uric').style.display='none';
+document.getElementById('chol').style.display='none';
+}
+function diabetes()
+{
+document.getElementById('diab').style.display='block';
+document.getElementById('hemat').style.display='none';
+document.getElementById('uric').style.display='none';
+document.getElementById('chol').style.display='none';
+}
+function uricacid()
+{
+document.getElementById('uric').style.display='block';
+document.getElementById('hemat').style.display='none';
+document.getElementById('diab').style.display='none';
+document.getElementById('chol').style.display='none';
+}
+function cholestrol()
+{
+document.getElementById('chol').style.display='block';
+document.getElementById('hemat').style.display='none';
+document.getElementById('uric').style.display='none';
+document.getElementById('diab').style.display='none';
+}
+</script>
+<body>
+<div class="options">
+<input class="input-radio100" type="radio" name="test" value="hem" onclick="hematology()">&nbsp;&nbsp;Hematology&nbsp;&nbsp;&nbsp;&nbsp;
+<input class="input-radio100" type="radio" name="test" value="db" onclick="diabetes()">&nbsp;&nbsp;Diabetes
+<input class="input-radio100" type="radio" name="test" value="ua" onclick="uricacid()">&nbsp;&nbsp;UricAcid
+<input class="input-radio100" type="radio" name="test"  value="ch" onclick="cholestrol()">&nbsp;&nbsp;
+</div>
+<br/><br/>
+<div id="hemat">
+    <label>Test</label>
+
+<input class="text" type="text" name="test" placeholder="Test Name" required="" >
+<br/>
+    <label>Result</label>
+
+<input class="text" type="text" name="result" placeholder="Result" required="" >
+<br/>
+    <label>Units</label>
+
+<input class="text" type="text" name="units" placeholder="Units" required="" >
+<br/>
+    <label>Ref-range</label>
+
+<input class="text" type="text" name="range" placeholder="Reference_range" required="" >
+<br/>
+</div>
+
+
+<div id="diab">
+    <label>Test</label>
+
+<input class="text" type="text" name="test" placeholder="Test Name" required="" >
+<br/>
+    <label>Result</label>
+
+<input class="text" type="text" name="result" placeholder="Result" required="" >
+<br/>
+    <label>Units</label>
+
+<input class="text" type="text" name="units" placeholder="Units" required="" >
+<br/>
+    <label>Ref-range</label>
+
+<input class="text" type="text" name="range" placeholder="Reference_range" required="" >
+<br/>
+</div>
+
+
+<div id="uric">
+    <label>Test</label>
+
+<input class="text" type="text" name="test" placeholder="Test Name" required="" >
+<br/>
+    <label>Result</label>
+
+<input class="text" type="text" name="result" placeholder="Result" required="" >
+<br/>
+    <label>Units</label>
+
+<input class="text" type="text" name="units" placeholder="Units" required="" >
+<br/>
+    <label>Ref-range</label>
+
+<input class="text" type="text" name="range" placeholder="Reference_range" required="" >
+<br/>
+</div>
+
+
+<div id="chol">
+    <label>Test</label>
+
+<input class="text" type="text" name="test" placeholder="Test Name" required="" >
+<br/>
+    <label>Result</label>
+
+<input class="text" type="text" name="result" placeholder="Result" required="" >
+<br/>
+    <label>Units</label>
+
+<input class="text" type="text" name="units" placeholder="Units" required="" >
+<br/>
+    <label>Ref-range</label>
+
+<input class="text" type="text" name="range" placeholder="Reference_range" required="" >
+<br/>
+</div>
+</body>

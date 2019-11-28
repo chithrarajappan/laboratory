@@ -1,0 +1,185 @@
+{% load static %}
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="{% static 'patreportstatic/img/favicon.png' %}" type="image/png">
+	<title>Medical Report</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'patreportstatic/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'patreportstatic/vendors/linericon/style.css' %}">
+	<link rel="stylesheet" href="{% static 'patreportstatic/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'patreportstatic/vendors/owl-carousel/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'patreportstatic/vendors/lightbox/simpleLightbox.css' %}">
+	<link rel="stylesheet" href="{% static 'patreportstatic/vendors/nice-select/css/nice-select.css' %}">
+	<link rel="stylesheet" href="{% static 'patreportstatic/vendors/animate-css/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'patreportstatic/vendors/jquery-ui/jquery-ui.css' %}">
+	<!-- main css -->
+	<link rel="stylesheet" href="{% static 'patreportstatic/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'patreportstatic/css/responsive.css' %}">
+</head>
+
+<body>
+
+
+
+	<!--================Header Menu Area =================-->
+	<header class="header_area">
+
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="index.html">
+						<img src="{% static 'patreportstatic/img/logo.png' %}" alt="">
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					 aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<div class="row ml-0 w-100">
+							<div class="col-lg-12 pr-0">
+								<ul class="nav navbar-nav center_nav pull-right">
+									<li class="nav-item active">
+										<a class="nav-link" href="rph">Home</a>
+									</li>
+									<li class="nav-item ">
+										<a class="nav-link" href="rpb">Hematology</a>
+									</li>
+									<li class="nav-item ">
+										<a class="nav-link" href="rpd">Diabetes</a>
+									</li>
+									<li class="nav-item ">
+										<a class="nav-link" href="rpu">UricAcid</a>
+									</li>
+									<li class="nav-item ">
+										<a class="nav-link" href="rpc">Cholestrol</a>
+									</li>
+
+
+										</ul>
+
+
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================Header Menu Area =================-->
+
+	<!--================ Home Banner Area =================-->
+	<section class="home_banner_area">
+		<div class="banner_inner d-flex align-items-center">
+			<div class="container">
+<!--				<div class="banner_content row">-->
+						<table  class="table table-bordered" border="1" cellpadding="15px" cellspacing="13px">
+                            <form method="post" action="report">{% csrf_token %}
+							{{ form }}
+								<label>Patient_ID</label>
+								<input type="number" name="pid" required>
+								<input class="btn btn-primary" type="submit" value="Search" />
+							</form>
+     							 <tr>
+                                     <td>Patient_ID</td>
+									 <td>DateTime</td>
+									 <td>Patient_Name</td>
+									 <td>Technician_ID</td>
+                                     <td>Test</td>
+        							<td>Result</td>
+        							<td>Units</td>
+		 							<td>Reference_range</td>
+                                     <td>Doctor_Consulted</td>
+
+
+
+								 </tr>
+
+									{% for can in stud %}
+							    		<tr>
+
+                                            <td>{{can.Patient_ID}}</td>
+											<td>{{can.DateTime}}</td>
+											<td>{{can.Patient_Name}}</td>
+											<td>{{can.Technician_id}}</td>
+        									<td>{{can.Test_Name}}</td>
+        									<td>{{can.Result}}</td>
+        									<td>{{can.Units}}</td>
+											<td>{{can.Reference_range}}</td>
+                                            <td>{{can.Doctor_Consulted}}</td>
+
+										</tr>
+
+    								{% endfor %}
+						</table>
+				</div>
+			</div>
+<!--		</div>-->
+	</section>
+
+
+
+
+
+
+
+
+	<!--================ End Home Banner Area =================-->
+
+	<!--================ Procedure Category Area =================-->
+
+	<!--================ End Procedure Category Area =================-->
+
+	<!--================ About Myself Area =================-->
+
+	<!--================ End About Myself Area =================-->
+
+
+	<!--================ Start Feedback Area =================-->
+
+	<!--================ End Feedback Area =================-->
+
+	<!--================ Start Offered Services Area =================-->
+
+	<!--================ End Offered Services Area =================-->
+
+
+	<!--================ Start Appointment Area =================-->
+
+	<!--================ End Appointment Area =================-->
+
+	<!--================ Start recent-blog Area =================-->
+
+	<!--================ end recent-blog Area =================-->
+
+	<!--================ start footer Area =================-->
+
+	<!--================ End footer Area =================-->
+
+
+
+	<!--================ Optional JavaScript =================-->
+	<!--================ jQuery first, then Popper.js, then Bootstrap JS =================-->
+	<script src="{% static 'patreportstatic/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'patreportstatic/js/popper.js' %}"></script>
+	<script src="{% static 'patreportstatic/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'patreportstatic/vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+	<script src="{% static 'patreportstatic/vendors/isotope/isotope-min.js' %}"></script>
+	<script src="{% static 'patreportstatic/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'patreportstatic/js/jquery.ajaxchimp.min.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+	<script src="{% static 'patreportstatic/js/mail-script.js' %}"></script>
+	<script src="{% static 'patreportstatic/js/custom.js' %}"></script>
+</body>
+
+</html>

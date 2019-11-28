@@ -1,0 +1,75 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="content_box">
+	<div class="left_bar">
+	    <ul class=" nav-tabs--vertical nav">
+<!--		<li class="nav-item">-->
+<!--			<a href="#lorem" class="nav-link active" data-toggle="tab" role="tab" aria-controls="lorem">Home</a>-->
+<!--		</li>-->
+<!--		<li class="nav-item">-->
+<!--			<a href="#ipsum" class="nav-link" data-toggle="tab" role="tab" aria-controls="ipsum">search</a>-->
+<!--		</li>-->
+<!--		<li class="nav-item">-->
+<!--			<a href="#dolor" class="nav-link " data-toggle="tab" role="tab" aria-controls="dolor">view</a>-->
+<!--		</li>-->
+<!--		<li class="nav-item">-->
+<!--			<a href="lg" class="nav-link" data-toggle="tab" role="tab" aria-controls="sit-amet">logout</a>-->
+<!--		</li>-->
+	</ul>
+	</div>
+    <div class="right_bar ">
+        	<div class="tab-content ">
+		<div class="tab-pane fade show active" id="lorem" role="tabpanel">
+<table  class="table table-bordered" border="1" cellpadding="15px" cellspacing="13px">
+      <tr>
+        <td>Technician_Name</td>
+        <td>Username</td>
+        <td>Password</td>
+          <td>Gender</td>
+          <td>Age</td>
+          <td>DateofBirth</td>
+          <td>BloodGroup</td>
+          <td>Mobile</td>
+          <td>Email</td>
+          <td>Address</td>
+
+      </tr>
+     {% for tec in tech %}
+    <tr>
+        <td>{{tec.Technician_Name}}</td>
+        <td>{{tec.Username}}</td>
+        <td>{{tec.Password}}</td>
+        <td>{{tec.Gender}}</td>
+        <td>{{tec.Age}}</td>
+        <td>{{tec.DateofBirth}}</td>
+        <td>{{tec.BloodGroup}}</td>
+        <td>{{tec.Mobile}}</td>
+        <td>{{tec.Email}}</td>
+        <td>{{tec.Address}}</td>
+
+
+
+
+        <!--<td><a href="update/{{can.login_id}}">Accept</a>
+             <a href="delete/{{can.login_id}}">Reject</a></td>-->
+
+
+
+    </tr>
+
+    {% endfor %}
+
+  </table>
+			</div>
+	</div>
+    </div>
+</div>

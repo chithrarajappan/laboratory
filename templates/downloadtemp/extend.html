@@ -1,0 +1,23 @@
+
+								<label>Patient_Name</label>
+                                {% for pi in pid %}
+                                <input type="hidden" name="pid" value="{{pi.id}}">
+								<input type="text" name="pname" value="{{pi.Patient_Name}}"required>&nbsp;
+                                <label>Gender</label>
+                                <input type="text" name="pgen"  value="{{pi.Gender}}" required>
+
+                                <label>D.O.B</label>
+                                <input type="text" name="pdat"  value="{{pi.DateofBirth}}" required>&nbsp;
+                     <br><br>    <label>Age</label>
+                                <input type="text" name="pag" value="{{pi.Age}}" required>&nbsp;
+                                <label>BloodGroup</label>
+                                <input type="text" name="pbg"  value="{{pi.BloodGroup}}" required>&nbsp;
+                                <label>Email</label>
+                                <input type="text" name="pmail" value="{{pi.Email}}" required><br><br>
+                                <label>Mobile</label>
+                                <input type="text" name="pmob" value="{{pi.Mobile}}" required>&nbsp;
+                                <label>MedicalHistory</label>
+                                <input type="text" name="pmed" value="{{pi.MedicalHistory}}" required>&nbsp;
+                                <label>Address</label>
+                                <input type="text" name="paddr" value="{{pi.ResidencyAddress}}"required><br><br>
+                                   {% endfor %}&nbsp;
